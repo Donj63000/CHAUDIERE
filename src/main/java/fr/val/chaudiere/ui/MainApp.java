@@ -11,7 +11,8 @@ import javafx.stage.Stage;
 public class MainApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("checklist.fxml"));
+        // Chargement via un chemin absolu pour garantir la présence du FXML
+        FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fr/val/chaudiere/ui/checklist.fxml"));
         Scene scene = new Scene(loader.load());
         stage.setTitle("Contrôle chaudière");
         stage.setScene(scene);
